@@ -40,22 +40,24 @@ If you find any problems with the RC, please [create an issue on GitHub](https:/
 
 ## Definition of support
 
-DocumentDB will publish one new major version each year. The major versions are on branches such as `release/v3`. 
+DocumentDB aims to publish one new major version each year. The major versions are on branches such as `release/v3`. 
 Security fixes will be backported to supported release branches, with new artifacts built until support ends. Other bug fixes will be backported case by case.
-A major version will be supported in this way until three months after the next major version is released.
+A major version will be supported until three months after the next major version is released.
 
 Backports of security fixes will be added to the LTS version with a patch version bump. For example, a security fix could bump the long-term support branch to v3.0-1, but not v3.1-0.
 The long-term support track will not get any minor updates, only patch updates.
 
 ## The main development track
 
-Major releases are time-based. Minor releases, however, will continue to be pushed out as they have been before, as development work completes. Instead of backporting, the artifacts on the main development track will be built only when the next minor version releases. In this way, all security and bug fixes will come as a user of the development track rolls forward with the latest minor updates.
+Major releases are time-based. Minor releases, however, will continue to be pushed out as development work completes.
+The artifacts on the main development track will be built only on minor version releases. At that point the previous minor is deprecated and all development track users should update immediately.
+In this way, all security and bug fixes will come as a user of the development track rolls forward with the latest minor updates.
 
 ## Upgrade paths
 
 DocumentDB will support direct in-place upgrades between consecutive long-term support major versions.
 For example, if you are using v1.0-2, and v2.0-0 is released as part of a new major, there will be instructions for how to update to that next version before v1.0 falls out of support.
 
-There is also a simple path from the current major release to the latest minor release of that same major. This will allow for a simple switch from long-term support to the latest builds.
+There is also a direct upgrade path from the current major release to the latest minor release of that same major. This will allow for a simple switch from long-term support to the latest builds.
 
 Release candidates are different. Upgrades from release candidate versions will not be supported. Release candidates use the same extension version as the first full release for that major, so there is no reliable extension upgrade path from an RC to the final release.
